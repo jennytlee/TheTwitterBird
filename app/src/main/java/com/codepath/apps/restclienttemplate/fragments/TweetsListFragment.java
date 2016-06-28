@@ -15,23 +15,25 @@ import com.codepath.apps.restclienttemplate.models.Tweet;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by jennytlee on 6/27/16.
  */
 public class TweetsListFragment extends Fragment {
 
-
     private ArrayList<Tweet> tweets;
     private TweetsArrayAdapter aTweets;
-    private ListView lvTweets;
+    @BindView(R.id.lvTweets) ListView lvTweets;
     // inflation logic
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup parent, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_tweets_list, parent, false);
+        ButterKnife.bind(this, v);
 
-        lvTweets = (ListView) v.findViewById(R.id.lvTweets);
         lvTweets.setAdapter(aTweets);
 
         return v;
@@ -52,5 +54,6 @@ public class TweetsListFragment extends Fragment {
     public void addAll(List<Tweet> tweets) {
         aTweets.addAll(tweets);
     }
+
 
 }
