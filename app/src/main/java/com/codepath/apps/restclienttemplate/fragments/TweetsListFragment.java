@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.codepath.apps.restclienttemplate.R;
+import com.codepath.apps.restclienttemplate.Utility;
 import com.codepath.apps.restclienttemplate.adapters.TweetsArrayAdapter;
 import com.codepath.apps.restclienttemplate.models.Tweet;
 
@@ -26,15 +27,16 @@ public class TweetsListFragment extends Fragment {
     private ArrayList<Tweet> tweets;
     private TweetsArrayAdapter aTweets;
     @BindView(R.id.lvTweets) ListView lvTweets;
-    // inflation logic
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup parent, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_tweets_list, parent, false);
+        View v = inflater.inflate(R.layout.fragment_tweets_list, null);
         ButterKnife.bind(this, v);
 
         lvTweets.setAdapter(aTweets);
+
+        Utility.setListViewHeightBasedOnItems(lvTweets);
 
         return v;
     }
@@ -51,8 +53,13 @@ public class TweetsListFragment extends Fragment {
 
     }
 
+
     public void addAll(List<Tweet> tweets) {
         aTweets.addAll(tweets);
+    }
+
+    public void clear() {
+        aTweets.clear();
     }
 
 

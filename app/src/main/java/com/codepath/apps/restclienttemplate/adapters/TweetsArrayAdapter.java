@@ -30,8 +30,15 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
 
     public static class ViewHolder {
         @BindView(R.id.tvBody) TextView tvBody;
+        @BindView(R.id.tvName) TextView tvName;
         @BindView(R.id.tvUsername) TextView tvUsername;
         @BindView(R.id.ivProfileImage) ImageView ivProfileImage;
+        @BindView(R.id.tvTimestamp) TextView tvTimestamp;
+        @BindView(R.id.ibShare) ImageView ibShare;
+        @BindView(R.id.ibLikes) ImageView ibLikes;
+        @BindView(R.id.ibRetweets) ImageView ibRetweets;
+        @BindView(R.id.tvRetweetCount) TextView tvRetweetCount;
+        @BindView(R.id.tvLikeCount) TextView tvLikeCount;
 
         public ViewHolder(View view) {
             ButterKnife.bind(this, view);
@@ -52,15 +59,15 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        viewHolder.tvUsername.setText(tweet.getUser().getScreenname());
+        viewHolder.tvName.setText(tweet.getUser().getName());
+        viewHolder.tvUsername.setText("@" + tweet.getUser().getScreenname());
         viewHolder.tvBody.setText(tweet.getBody());
+        viewHolder.tvTimestamp.setText(tweet.getTimestamp());
+        viewHolder.tvRetweetCount.setText(tweet.getRetweetCount());
+        viewHolder.tvLikeCount.setText(tweet.getLikeCount());
 
 //            viewHolder.ivProfileImage.setImageResource(android.R.color.transparent);
         Glide.with(getContext()).load(tweet.getUser().getProfileImageUrl()).fitCenter().into(viewHolder.ivProfileImage);
-
-        //add other views here
-
-
 
         return convertView;
 

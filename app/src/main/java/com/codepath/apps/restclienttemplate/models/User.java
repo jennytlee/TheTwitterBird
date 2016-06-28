@@ -19,6 +19,7 @@ public class User {
     private int following;
 
 
+
     public String getName() {
         return name;
     }

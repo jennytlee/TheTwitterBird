@@ -14,17 +14,22 @@ import com.codepath.apps.restclienttemplate.R;
 import com.codepath.apps.restclienttemplate.fragments.HomeTimelineFragment;
 import com.codepath.apps.restclienttemplate.fragments.MentionsTimelineFragment;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 
 public class TimelineActivity extends AppCompatActivity {
 
+    @BindView(R.id.vpPager) ViewPager vpPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
+        ButterKnife.bind(this);
 
-        ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
         vpPager.setAdapter(new TweetsPagerAdapter(getSupportFragmentManager()));
+
 
     }
 
@@ -73,8 +78,6 @@ public class TimelineActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
         return super.onOptionsItemSelected(item);
     }
 }

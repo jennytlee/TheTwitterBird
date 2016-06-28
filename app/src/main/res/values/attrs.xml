@@ -1,0 +1,5 @@
+<resources>
+    <declare-styleable name="GothamNarrowBook">
+        <attr name="font" format="string"/>
+    </declare-styleable>
+</resources>

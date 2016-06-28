@@ -28,15 +28,17 @@ public class HomeTimelineFragment extends TweetsListFragment {
         super.onCreate(savedInstanceState);
 
         client = TwitterApp.getRestClient();
+
         populateTimeline();
     }
+
 
     private void populateTimeline() {
         client.getHomeTimeline(new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
                 ArrayList<Tweet> tweets = Tweet.fromJSONArray(response);
-
+                clear();
                 addAll(tweets);
             }
 
@@ -47,5 +49,6 @@ public class HomeTimelineFragment extends TweetsListFragment {
             }
         });
     }
+
 
 }
