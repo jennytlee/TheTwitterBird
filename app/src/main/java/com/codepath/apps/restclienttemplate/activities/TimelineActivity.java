@@ -17,8 +17,10 @@ import com.codepath.apps.restclienttemplate.fragments.MentionsTimelineFragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-
 public class TimelineActivity extends AppCompatActivity {
+
+    long uid;
+    String screenName;
 
     @BindView(R.id.vpPager) ViewPager vpPager;
 
@@ -29,7 +31,6 @@ public class TimelineActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         vpPager.setAdapter(new TweetsPagerAdapter(getSupportFragmentManager()));
-
 
     }
 

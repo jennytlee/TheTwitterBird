@@ -11,7 +11,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:layout_margin="5dp">
 
         <ImageView
             android:id="@+id/ivProfileImage"
@@ -52,8 +53,10 @@
         android:layout_below="@id/rlInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
 
         <TextView
             android:id="@+id/tvFollowers"
@@ -66,8 +69,8 @@
             android:id="@+id/tvFollowing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
             android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
             android:text="5 Following"/>
     </LinearLayout>
 
