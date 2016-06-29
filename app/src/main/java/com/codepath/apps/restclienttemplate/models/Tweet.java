@@ -99,15 +99,18 @@ public class Tweet {
             relativeDate = DateUtils.getRelativeTimeSpanString(dateMillis,
                     System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS).toString();
 
-            /*StringBuilder sb = new StringBuilder(relativeDate);
+            if (Character.isDigit(relativeDate.charAt(0))) {
+                StringBuilder sb = new StringBuilder(relativeDate);
 
-            if (!Character.isDigit(relativeDate.charAt(1))) {
-                sb.deleteCharAt(1);
-                relativeDate = sb.toString().substring(0, 2);
-            } else {
-                sb.deleteCharAt(2);
-                relativeDate = sb.toString().substring(0, 3);
-            }*/
+                if (!Character.isDigit(relativeDate.charAt(1))) {
+                    sb.deleteCharAt(1);
+                    relativeDate = sb.toString().substring(0, 2);
+                } else {
+                    sb.deleteCharAt(2);
+                    relativeDate = sb.toString().substring(0, 3);
+                }
+            }
+
 
 
         } catch (ParseException e) {
