@@ -31,7 +31,7 @@ The following **optional** features are implemented:
 * [ ] When a network request is sent, user sees an [indeterminate progress indicator](http://guides.codepath.com/android/Handling-ProgressBars#progress-within-actionbar)
 * [ ] User can **"reply" to any tweet on their home timeline**
   * [ ] The user that wrote the original tweet is automatically "@" replied in compose
-* [ ] User can click on a tweet to be **taken to a "detail view"** of that tweet
+* [x] User can click on a tweet to be **taken to a "detail view"** of that tweet
  * [ ] User can take favorite (and unfavorite) or retweet actions on a tweet
 * [ ] User can **open the twitter app offline and see last loaded tweets**. Persisted in SQLite tweets are refreshed on every application launch. While "live data" is displayed when app can get it from Twitter API, it is also saved for use in an offline mode.
 * [x] Compose activity is replaced with a modal overlay
