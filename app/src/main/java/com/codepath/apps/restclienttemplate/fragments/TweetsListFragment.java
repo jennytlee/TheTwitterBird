@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.codepath.apps.restclienttemplate.R;
-import com.codepath.apps.restclienttemplate.Utility;
 import com.codepath.apps.restclienttemplate.adapters.TweetsArrayAdapter;
 import com.codepath.apps.restclienttemplate.models.Tweet;
 
@@ -36,8 +35,6 @@ public class TweetsListFragment extends Fragment {
 
         lvTweets.setAdapter(aTweets);
 
-        Utility.setListViewHeightBasedOnItems(lvTweets);
-
         return v;
     }
 
@@ -53,6 +50,10 @@ public class TweetsListFragment extends Fragment {
 
     }
 
+    /*public void add(int position, Tweet tweet) {
+        aTweets.insert(tweet, position);
+        aTweets.notifyDataSetChanged();
+    }*/
 
     public void addAll(List<Tweet> tweets) {
         aTweets.addAll(tweets);

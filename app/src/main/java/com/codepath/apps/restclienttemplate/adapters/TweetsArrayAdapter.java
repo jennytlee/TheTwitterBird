@@ -96,4 +96,10 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
         return convertView;
 
     }
+
+    @Override
+    public void add(Tweet object) {
+        super.add(object);
+        notifyDataSetChanged();
+    }
 }

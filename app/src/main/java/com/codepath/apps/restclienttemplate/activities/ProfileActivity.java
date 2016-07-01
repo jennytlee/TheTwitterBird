@@ -8,13 +8,10 @@ import com.codepath.apps.restclienttemplate.R;
 import com.codepath.apps.restclienttemplate.fragments.MyHeaderFragment;
 import com.codepath.apps.restclienttemplate.fragments.UserHeaderFragment;
 import com.codepath.apps.restclienttemplate.fragments.UserTimelineFragment;
-import com.codepath.apps.restclienttemplate.models.User;
 
 import butterknife.ButterKnife;
 
 public class ProfileActivity extends AppCompatActivity {
-
-    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

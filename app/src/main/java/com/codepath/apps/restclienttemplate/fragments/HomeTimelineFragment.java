@@ -48,5 +48,27 @@ public class HomeTimelineFragment extends TweetsListFragment {
         });
     }
 
+    public void appendTweet(final Tweet tweet) {
+
+        client.getHomeTimeline(new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                ArrayList<Tweet> tweets = Tweet.fromJSONArray(response);
+
+                tweets.add(0, tweet);
+                lvTweets.setSelection(0);
+
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+            }
+        });
+
+        populateTimeline();
+
+    }
+
 
 }

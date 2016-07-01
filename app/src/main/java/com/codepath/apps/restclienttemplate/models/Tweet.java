@@ -47,8 +47,6 @@ public class Tweet {
         return likeCount;
     }
 
-
-
     public static Tweet fromJSON(JSONObject jsonObject) {
         Tweet tweet = new Tweet();
 
