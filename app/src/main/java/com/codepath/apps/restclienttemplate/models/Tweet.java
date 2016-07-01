@@ -17,7 +17,7 @@ import java.util.Locale;
 public class Tweet {
 
     private String body;
-    private long uid;
+    private long tweetId;
     private User user;
     private String timestamp;
     private String retweetCount;
@@ -27,8 +27,8 @@ public class Tweet {
         return body;
     }
 
-    public long getUid() {
-        return uid;
+    public long getTweetId() {
+        return tweetId;
     }
 
     public User getUser() {
@@ -54,7 +54,7 @@ public class Tweet {
 
             tweet.user = User.fromJSON(jsonObject.getJSONObject("user"));
             tweet.body = jsonObject.getString("text");
-            tweet.uid = jsonObject.getLong("id");
+            tweet.tweetId = jsonObject.getLong("id");
             tweet.timestamp = jsonObject.getString("created_at");
             tweet.retweetCount = String.valueOf(jsonObject.getInt("retweet_count"));
             tweet.likeCount = String.valueOf(jsonObject.getInt("favorite_count"));

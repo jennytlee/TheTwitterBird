@@ -1,14 +1,17 @@
 package com.codepath.apps.restclienttemplate.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.codepath.apps.restclienttemplate.R;
+import com.codepath.apps.restclienttemplate.activities.TweetDetailActivity;
 import com.codepath.apps.restclienttemplate.adapters.TweetsArrayAdapter;
 import com.codepath.apps.restclienttemplate.models.Tweet;
 
@@ -30,10 +33,30 @@ public class TweetsListFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup parent, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_tweets_list, null);
+        View v = inflater.inflate(R.layout.fragment_tweets_list, parent, false);
         ButterKnife.bind(this, v);
 
         lvTweets.setAdapter(aTweets);
+
+        lvTweets.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent(getContext(), TweetDetailActivity.class);
+
+                Tweet tweet = aTweets.getItem(position);
+
+                long tweetId = tweet.getTweetId();
+                long uid = tweet.getUser().getUid();
+                String screenName = tweet.getUser().getScreenname();
+
+                i.putExtra("tweet_id", tweetId);
+                i.putExtra("user_id", uid);
+                i.putExtra("screen_name", screenName);
+                startActivity(i);
+
+            }
+        });
 
         return v;
     }

@@ -2,6 +2,7 @@ package com.codepath.apps.restclienttemplate.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
@@ -33,6 +34,7 @@ public class TimelineActivity extends AppCompatActivity implements ComposeTweetD
     private TwitterClient client;
 
     @BindView(R.id.vpPager) ViewPager vpPager;
+    @BindView(R.id.sliding_tabs) TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +42,10 @@ public class TimelineActivity extends AppCompatActivity implements ComposeTweetD
         setContentView(R.layout.activity_timeline);
         ButterKnife.bind(this);
 
-
         client = TwitterApp.getRestClient();
         adapterViewPager = new TweetsPagerAdapter(getSupportFragmentManager());
         vpPager.setAdapter(adapterViewPager);
+        tabLayout.setupWithViewPager(vpPager);
 
     }
 
@@ -57,7 +59,6 @@ public class TimelineActivity extends AppCompatActivity implements ComposeTweetD
 
         FragmentManager fm = getSupportFragmentManager();
         ComposeTweetDialogFragment composeTweetDialogFragment = new ComposeTweetDialogFragment();
-        //composeTweetDialogFragment.setStyle(DialogFragment.STYLE_NORMAL, R.style.Dialog_Tweet);
         composeTweetDialogFragment.show(fm, "fragment_compose_tweet");
 
     }
@@ -80,7 +81,6 @@ public class TimelineActivity extends AppCompatActivity implements ComposeTweetD
 
         HomeTimelineFragment fragmentHomeTweets = (HomeTimelineFragment) adapterViewPager.getRegisteredFragment(0);
         fragmentHomeTweets.appendTweet(newTweet);
-        adapterViewPager.notifyDataSetChanged();
 
 
     }

@@ -27,14 +27,6 @@ public class ComposeTweetDialogFragment extends DialogFragment implements TextVi
         void onFinishEditDialog(String inputText);
     }
 
-    /*public static ComposeTweetDialogFragment newInstance(String tweet) {
-        ComposeTweetDialogFragment frag = new ComposeTweetDialogFragment();
-        Bundle args = new Bundle();
-        args.putString("body", tweet);
-        frag.setArguments(args);
-        return frag;
-    }
-    */
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -7,14 +7,29 @@
     android:orientation="vertical"
     tools:context="activities.TimelineActivity">
 
-        <android.support.design.widget.CoordinatorLayout
-            android:id="@+id/main_content"
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="bottom|right">
 
+    <android.support.design.widget.TabLayout
+        android:id="@+id/sliding_tabs"
+        app:tabGravity="fill"
+        app:tabMaxWidth="0dp"
+        style="@style/MyCustomTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/main_content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom|right">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vpPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v4.view.ViewPager>
 
         <android.support.design.widget.FloatingActionButton
             android:src="@drawable/ic_tweet"
@@ -27,19 +42,6 @@
             app:layout_anchorGravity="bottom|right|end"
             android:adjustViewBounds="false"
             android:onClick="composeTweet"/>
-
-        <android.support.design.widget.TabLayout
-            android:id="@+id/sliding_tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:tabMode="scrollable" />
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/vpPager"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </android.support.v4.view.ViewPager>
 
         </android.support.design.widget.CoordinatorLayout>
 

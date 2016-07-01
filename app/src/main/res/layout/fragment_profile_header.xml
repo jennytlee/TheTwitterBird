@@ -27,7 +27,7 @@
             />
 
         <TextView
-            android:id="@+id/tvName"
+            android:id="@+id/tvBodyText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/ivProfileImage"
@@ -40,9 +40,9 @@
             android:id="@+id/tvTagline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/tvName"
-            android:layout_alignStart="@id/tvName"
-            android:layout_below="@id/tvName"
+            android:layout_alignLeft="@id/tvBodyText"
+            android:layout_alignStart="@id/tvBodyText"
+            android:layout_below="@id/tvBodyText"
             android:text="@string/tagline"
             android:textSize="12sp"
             />

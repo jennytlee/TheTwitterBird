@@ -22,7 +22,7 @@ public class ProfileActivity extends AppCompatActivity {
         long uid = getIntent().getLongExtra("user_id", 0);
         String screenName = getIntent().getStringExtra("screen_name");
 
-        getSupportActionBar().setTitle("@" + screenName);
+        // getSupportActionBar().setTitle("@" + screenName);
         UserTimelineFragment userFragment = UserTimelineFragment.newInstance(screenName);
         UserHeaderFragment userHeaderFragment = UserHeaderFragment.newInstance(uid,
                 screenName);

@@ -40,7 +40,7 @@ public class UserHeaderFragment extends ProfileHeaderFragment {
 
     private void populateProfileHeader() {
         long userId = getArguments().getLong("uid");
-        String screenName = getArguments().getString("screen_name");
+        final String screenName = getArguments().getString("screen_name");
         client.getUserInfo(userId, screenName, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -51,8 +51,8 @@ public class UserHeaderFragment extends ProfileHeaderFragment {
                 tvFollowers.setText(user.getFollowers() + " Followers");
                 tvFollowing.setText(user.getFollowing() + " Following");
                 Glide.with(getContext()).load(user.getProfileImageUrl()).fitCenter().into(ivProfileImage);
-                // set tile bar as user's screen name
-
+                // set title bar as user's screen name
+                //((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("@" + screenName);
             }
 
             @Override

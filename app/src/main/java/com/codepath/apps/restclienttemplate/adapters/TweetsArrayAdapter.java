@@ -82,20 +82,14 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
                 i.putExtra("screen_name", screenName);
                 v.getContext().startActivity(i);
 
-                /*UserTimelineFragment userFragment = UserTimelineFragment.newInstance(screenName);
-                UserHeaderFragment userHeaderFragment = UserHeaderFragment.newInstance(uid,
-                        screenName);
-                FragmentTransaction ft = ((ProfileActivity) getContext()).getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.flTimeline, userFragment);ft.replace(R.id.flProfileHeader, userHeaderFragment);
-                ft.commit();
-                */
-
             }
         });
 
         return convertView;
 
     }
+
+
 
     @Override
     public void add(Tweet object) {
