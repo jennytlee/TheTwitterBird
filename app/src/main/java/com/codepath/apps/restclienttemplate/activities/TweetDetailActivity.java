@@ -14,10 +14,9 @@ public class TweetDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tweet_detail);
-
         long tweet_id = getIntent().getLongExtra("tweet_id", 0);
         long uid = getIntent().getLongExtra("user_id", 0);
-        String screenName = getIntent().getStringExtra("screen_name");
+        final String screenName = getIntent().getStringExtra("screen_name");
 
 
         TweetDetailFragment tweetDetailFragment = TweetDetailFragment.newInstance(tweet_id);

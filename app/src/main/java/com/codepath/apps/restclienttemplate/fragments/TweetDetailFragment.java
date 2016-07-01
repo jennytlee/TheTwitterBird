@@ -3,6 +3,7 @@ package com.codepath.apps.restclienttemplate.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import com.codepath.apps.restclienttemplate.R;
 import com.codepath.apps.restclienttemplate.TwitterApp;
 import com.codepath.apps.restclienttemplate.TwitterClient;
+import com.codepath.apps.restclienttemplate.activities.TweetDetailActivity;
 import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
@@ -86,6 +88,15 @@ public class TweetDetailFragment extends Fragment {
                 tvDate.setText(tweet.getTimestamp());
                 tvRetweetCount.setText(tweet.getRetweetCount());
                 tvLikeCount.setText(tweet.getLikeCount());
+
+                ivReply.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        FragmentManager fm = ((TweetDetailActivity) v.getContext()).getSupportFragmentManager();
+                        ComposeTweetDialogFragment composeTweetDialogFragment = ComposeTweetDialogFragment.newInstance("@" + tweet.getUser().getScreenname());
+                        composeTweetDialogFragment.show(fm, "fragment_compose_tweet");
+                    }
+                });
 
             }
 
