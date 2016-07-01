@@ -2,7 +2,7 @@
 
 **The Twitter Bird** is an android app that allows a user to view home and mentions timelines, view user profiles with user timelines, as well as compose and post a new tweet. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
 
-Time spent: **X** hours spent in total
+Time spent: **30** hours spent in total
 
 ## User Stories
 
@@ -27,15 +27,15 @@ The following **optional** features are implemented:
 * [ ] User can **pull down to refresh tweets** in either timeline
 * [x] User can **search for tweets matching a particular query** and see results
 * [ ] User can see embedded image media within the tweet detail view.
-* [ ] Improve the user interface and theme the app to feel twitter branded with colors and styles
+* [x] Improve the user interface and theme the app to feel twitter branded with colors and styles
 * [ ] When a network request is sent, user sees an [indeterminate progress indicator](http://guides.codepath.com/android/Handling-ProgressBars#progress-within-actionbar)
-* [ ] User can **"reply" to any tweet on their home timeline**
-  * [ ] The user that wrote the original tweet is automatically "@" replied in compose
+* [x] User can **"reply" to any tweet on their home timeline**
+  * [x] The user that wrote the original tweet is automatically "@" replied in compose
 * [x] User can click on a tweet to be **taken to a "detail view"** of that tweet
  * [ ] User can take favorite (and unfavorite) or retweet actions on a tweet
 * [ ] User can **open the twitter app offline and see last loaded tweets**. Persisted in SQLite tweets are refreshed on every application launch. While "live data" is displayed when app can get it from Twitter API, it is also saved for use in an offline mode.
 * [x] Compose activity is replaced with a modal overlay
-* [ ] User can **click a link within a tweet body** on tweet details view. The click will launch the web browser with relevant page opened.
+* [x] User can **click a link within a tweet body** on tweet details view. The click will launch the web browser with relevant page opened.
 * [ ] Used Parcelable instead of Serializable leveraging the popular [Parceler library](http://guides.codepath.com/android/Using-Parceler) when passing data between activities.
 * [ ] Replaced all icon drawables and other static image assets with [vector drawables](http://guides.codepath.com/android/Drawables#vector-drawables) where appropriate.
 * [ ] User can view following / followers list through the profile of a user
@@ -49,7 +49,6 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
