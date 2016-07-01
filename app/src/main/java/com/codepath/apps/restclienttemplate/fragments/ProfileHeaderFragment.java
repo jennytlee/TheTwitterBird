@@ -24,7 +24,7 @@ public class ProfileHeaderFragment extends Fragment {
     TwitterClient client;
     User user;
 
-    @BindView(R.id.tvBodyText)
+    @BindView(R.id.tvNameProf)
     TextView tvName;
     @BindView(R.id.tvTagline) TextView tvTagline;
     @BindView(R.id.tvFollowers) TextView tvFollowers;

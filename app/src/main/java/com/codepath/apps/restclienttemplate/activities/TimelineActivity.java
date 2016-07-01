@@ -66,7 +66,7 @@ public class TimelineActivity extends AppCompatActivity implements ComposeTweetD
     }
 
     @Override
-    public void onFinishEditDialog(final String inputText) {
+    public void onFinishEditDialog(String inputText) {
 
         client.postTweet(inputText, new JsonHttpResponseHandler() {
 
@@ -148,6 +148,7 @@ public class TimelineActivity extends AppCompatActivity implements ComposeTweetD
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
+
 
 
 }

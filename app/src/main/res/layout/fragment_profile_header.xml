@@ -27,7 +27,7 @@
             />
 
         <TextView
-            android:id="@+id/tvBodyText"
+            android:id="@+id/tvNameProf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/ivProfileImage"
@@ -38,11 +38,13 @@
 
         <TextView
             android:id="@+id/tvTagline"
+            android:autoLink="all"
+            android:linksClickable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/tvBodyText"
-            android:layout_alignStart="@id/tvBodyText"
-            android:layout_below="@id/tvBodyText"
+            android:layout_alignLeft="@id/tvNameProf"
+            android:layout_alignStart="@id/tvNameProf"
+            android:layout_below="@id/tvNameProf"
             android:text="@string/tagline"
             android:textSize="12sp"
             />

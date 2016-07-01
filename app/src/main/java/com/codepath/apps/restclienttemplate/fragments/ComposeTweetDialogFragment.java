@@ -23,10 +23,18 @@ public class ComposeTweetDialogFragment extends DialogFragment implements TextVi
 
     public ComposeTweetDialogFragment() {
     }
+
     public interface ComposeTweetDialogListener {
         void onFinishEditDialog(String inputText);
     }
 
+    public static ComposeTweetDialogFragment newInstance(String screen_name) {
+        ComposeTweetDialogFragment composeTweetDialogFragment = new ComposeTweetDialogFragment();
+        Bundle args = new Bundle();
+        args.putString("screen_name", screen_name);
+        composeTweetDialogFragment.setArguments(args);
+        return composeTweetDialogFragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,9 +45,21 @@ public class ComposeTweetDialogFragment extends DialogFragment implements TextVi
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+
+        String screenName = "";
+        if (getArguments() != null) {
+            screenName = getArguments().getString("screen_name");
+        }
+
         super.onViewCreated(view, savedInstanceState);
         // Get field from view
         etBody = (EditText) view.findViewById(R.id.etBody);
+
+        if (!screenName.isEmpty()) {
+            etBody.setText(screenName + " ");
+            etBody.setSelection(etBody.getText().length());
+        }
+
         // Fetch arguments from bundle and set title
         getDialog().setTitle("Compose tweet");
         // Show soft keyboard automatically and request focus to field

@@ -3,7 +3,6 @@ package com.codepath.apps.restclienttemplate.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +29,7 @@ public class TweetDetailFragment extends Fragment {
     TwitterClient client;
     Tweet tweet;
 
-    @BindView(R.id.tvBodyText)
+    @BindView(R.id.tvBody)
     TextView tvBodyText;
     @BindView(R.id.tvDate)
     TextView tvDate;
@@ -76,7 +75,6 @@ public class TweetDetailFragment extends Fragment {
     private void populateTweet() {
 
         final long tweetId = getArguments().getLong("tweet_id");
-        Log.d("DEBUG", String.valueOf(tweetId));
 
         client.getTweetInfo(tweetId, new JsonHttpResponseHandler() {
             @Override

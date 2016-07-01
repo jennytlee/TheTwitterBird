@@ -2,6 +2,7 @@ package com.codepath.apps.restclienttemplate.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.codepath.apps.restclienttemplate.R;
 import com.codepath.apps.restclienttemplate.activities.ProfileActivity;
+import com.codepath.apps.restclienttemplate.activities.TimelineActivity;
+import com.codepath.apps.restclienttemplate.fragments.ComposeTweetDialogFragment;
 import com.codepath.apps.restclienttemplate.models.Tweet;
 
 import java.util.List;
@@ -76,11 +79,20 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
         viewHolder.ivProfileImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent i = new Intent(v.getContext(), ProfileActivity.class);
                 i.putExtra("user_id", uid);
                 i.putExtra("screen_name", screenName);
                 v.getContext().startActivity(i);
+
+            }
+        });
+
+        viewHolder.ibShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm = ((TimelineActivity) v.getContext()).getSupportFragmentManager();
+                ComposeTweetDialogFragment composeTweetDialogFragment = ComposeTweetDialogFragment.newInstance("@" + screenName);
+                composeTweetDialogFragment.show(fm, "fragment_compose_tweet");
 
             }
         });
