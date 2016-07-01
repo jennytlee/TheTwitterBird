@@ -11,10 +11,10 @@ The following **required** functionality is completed:
 * [x] User can **sign in to Twitter** using OAuth login process
 * [x] User can **switch between Timeline and Mention views using tabs**
   * [x] User is displayed the username, name, and body for each tweet
-  * [ ] User is displayed the [relative timestamp](https://gist.github.com/nesquena/f786232f5ef72f6e10a7) for each tweet "8m", "7h"
+  * [x] User is displayed the [relative timestamp](https://gist.github.com/nesquena/f786232f5ef72f6e10a7) for each tweet "8", "7h"
 * [x] User can **compose and post a new tweet**
   * [x] User can click a "Compose" icon in the Action Bar on the top right
-  * [ ] User can then enter a new tweet from a second activity and then post this to twitter
+  * [x] User can then enter a new tweet from a second activity and then post this to twitter
 * [x] User can navigate to **view their own profile**
   * [x] User can see picture, tagline, # of followers, # of following, and tweets on their profile.
 * [x] User can **click on the profile image** in any tweet to see **another user's** profile.
